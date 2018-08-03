@@ -1,0 +1,23 @@
+language: elixir
+
+elixir:
+  - 1.7
+  - 1.6
+
+otp_release:
+  - 21.0
+  - 20.3
+
+cache:
+  directories:
+    - _build
+    - deps
+
+services:
+  - mysql
+  - redis
+  - mongodb
+  - memcached
+
+script: 
+  - "mix test --trace"

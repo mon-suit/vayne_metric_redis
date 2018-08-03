@@ -1,0 +1,8 @@
+%{
+  "connection": {:hex, :connection, "1.0.4", "a1cae72211f0eef17705aaededacac3eb30e6625b04a6117c1b2db6ace7d5976", [:mix], [], "hexpm"},
+  "io_ansi_table": {:git, "https://github.com/milkwine/io_ansi_table", "5ec136c18ee20302a0145f1c882636109cba3917", [branch: "support_remote_shell"]},
+  "libring": {:hex, :libring, "1.3.1", "b4273e25c6285f03a4b86d068aeee301be18a5aca3f0ca74f0c3a2f8b7d912b1", [:mix], [], "hexpm"},
+  "map_sorter": {:hex, :map_sorter, "0.2.22", "b6e7bc9ae2dbc46a42e3bddd5ce30f4d5be30b5a2ae74f3aae99a11cdc09434a", [:mix], [{:persist_config, "~> 0.2", [hex: :persist_config, repo: "hexpm", optional: false]}], "hexpm"},
+  "persist_config": {:hex, :persist_config, "0.2.6", "2e177b1e82e0f26b90936af21ab5ddbffdbb1372adc33d49f20159e52d583b10", [:mix], [], "hexpm"},
+  "redix": {:hex, :redix, "0.7.1", "25a6c1c0d9b2d12a35aef759f9e49bd9bca00e0cd857ce766412f08fdda72163", [:mix], [{:connection, "~> 1.0", [hex: :connection, repo: "hexpm", optional: false]}], "hexpm"},
+}
