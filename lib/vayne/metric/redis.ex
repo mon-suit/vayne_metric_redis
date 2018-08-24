@@ -118,8 +118,8 @@ defmodule Vayne.Metric.Redis do
     maxmem = if is_number(maxmem), do: maxmem, else: try_get_maxmem(conn)
 
     if not is_nil(maxmem) && maxmem != 0 do
-      used_memory_peak_percent = hash["used_memory_peak"] / maxmem
-      used_memory_percent      = hash["used_memory"] / maxmem
+      used_memory_peak_percent = 100 * hash["used_memory_peak"] / maxmem
+      used_memory_percent      = 100 * hash["used_memory"] / maxmem
       acc
       |> Map.put("maxmemory", maxmem )
       |> Map.put("used_memory_peak_percent", Float.floor(used_memory_peak_percent, 3))
@@ -158,8 +158,7 @@ defmodule Vayne.Metric.Redis do
     keyspace_hits   = hash["keyspace_hits"]
     keyspace_misses = hash["keyspace_misses"]
 
-    #key_hits_percent% = keyspace_hits / keyspace_hits + keyspace_misses
-    key_hits_percent = if keyspace_hits + keyspace_misses <= 0, do: 0, else: keyspace_hits / (keyspace_hits + keyspace_misses)
+    key_hits_percent = if keyspace_hits + keyspace_misses <= 0, do: 0, else: 100 * keyspace_hits / (keyspace_hits + keyspace_misses)
 
     Map.put(acc, "key_hits_percent", key_hits_percent)
   end
